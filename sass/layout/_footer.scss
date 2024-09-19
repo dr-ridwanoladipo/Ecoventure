@@ -1,0 +1,130 @@
+.footer {
+  background-color: $color-grey-dark-3;
+  padding: 10rem;
+  font-size: 1.4rem;
+  color: $color-grey-light-1;
+
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+
+  &__logo-box {
+    text-align: center;
+    margin-bottom: 8rem;
+    position: relative;
+
+    @include respond(tab-port) {
+      margin-bottom: 6rem;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      height: 3rem;
+      width: 15rem;
+      background-color: $color-grey-dark-3;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 75%);
+    }
+
+    &::before {
+      content: "ecoventure";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 75%);
+      text-transform: uppercase;
+      font-size: 2rem;
+      background-image: linear-gradient(
+        to right,
+        $color-primary-light,
+        $color-primary-dark
+      );
+      color: transparent;
+      background-clip: text;
+      z-index: 500;
+      font-weight: 700;
+    }
+  }
+
+  &__logo {
+    width: 15rem;
+    height: auto;
+  }
+
+  &__navigation {
+  }
+
+  &__list {
+    list-style: none;
+    border-top: 1px solid $color-gray-dark;
+    padding-top: 2rem;
+    display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      color: inherit;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      background-color: $color-grey-dark-3;
+      transition: all 0.2s;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+      transform: rotate(5deg) scale(1.3);
+    }
+  }
+
+  &__copyright {
+    // border-top: 1px solid $color-gray-dark;
+    // padding-top: 2rem;
+    width: 80%;
+    padding-top: 1rem;
+    float: right;
+
+    span {
+      text-transform: uppercase;
+      // font-size: 2rem;
+      background-image: linear-gradient(
+        to right,
+        $color-primary-light,
+        $color-primary-dark
+      );
+      color: transparent;
+      background-clip: text;
+      font-weight: 700;
+    }
+
+    &:first-child {
+      border-top: 1px solid $color-gray-dark;
+      padding-top: 2rem;
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
+      float: none;
+    }
+  }
+}
